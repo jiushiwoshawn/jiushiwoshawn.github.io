@@ -270,6 +270,103 @@
   </section>
 
   <!-- ============================================================
+       学情可视化（品牌色内容图形：雷达图 + 进步曲线）
+       说明：纯 SVG 品牌色图形，数据均为示意；替代装饰插画。
+       雷达图维度与 App 能力分析完全一致（见 ScoreUtils.axisOrder）。
+       ============================================================ -->
+  <section id="insights" class="py-24 lg:py-32" data-spy="features">
+    <div class="max-w-site mx-auto px-5 sm:px-8">
+      <div class="reveal max-w-2xl">
+        <p class="text-sm font-semibold tracking-widest text-accent">学情分析</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">看得见的教学成果</h2>
+        <p class="mt-4 text-muted leading-relaxed">APT 基于作业与试卷作答数据，自动生成能力分析与学习轨迹——维度强弱、记忆留存、上课周期一眼看透，教学成果看得见、说得清。</p>
+      </div>
+
+      <div class="mt-14 grid lg:grid-cols-2 gap-10 items-start">
+        <!-- 能力雷达图（App 同款：从中心向外生长 + 顶点逐个点亮） -->
+        <article class="card reveal p-7 sm:p-8" data-reveal-delay="0" data-animate="radar">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="text-xl font-semibold">能力雷达图</h3>
+            <span class="text-xs text-muted">示例数据</span>
+          </div>
+          <p class="mt-2 text-sm text-muted leading-relaxed">英皇乐理 7 大维度强弱分布，从中心向外生长，定位每个学生的提分空间。</p>
+          <div class="mt-4 flex justify-center">
+            <svg class="insight-radar" viewBox="0 0 360 300" role="img" aria-label="能力雷达图示例：节奏、音高、调与音阶、和弦、音程、音乐综合、术语符号的得分分布"></svg>
+          </div>
+        </article>
+
+        <!-- 记忆留存曲线（艾宾浩斯，可拖动游标） -->
+        <article class="card reveal p-7 sm:p-8" data-reveal-delay="80" data-animate="curve">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="text-xl font-semibold">记忆留存曲线</h3>
+            <span class="badge-accent">半衰期 4 天</span>
+          </div>
+          <p class="mt-2 text-sm text-muted leading-relaxed">基于艾宾浩斯遗忘曲线。拖动曲线上的游标，查看任意一天的遗忘程度与临近知识点。</p>
+          <div class="mt-4">
+            <svg class="insight-curve" viewBox="0 0 340 240" role="img" aria-label="记忆留存曲线示例：艾宾浩斯遗忘曲线与知识点落点"></svg>
+          </div>
+          <div class="curve-readout mt-3">
+            <div>
+              <div class="curve-readout-day" data-curve-day>第 7 天</div>
+              <div class="curve-readout-sub" data-curve-ret>理论留存 30%</div>
+            </div>
+            <div class="curve-readout-right">
+              <div class="curve-readout-near" data-curve-near>临近 2 个知识点</div>
+              <div class="curve-readout-low" data-curve-low>0 个低于阈值</div>
+            </div>
+          </div>
+          <div class="curve-legend mt-2">
+            <span><i class="dot" style="background:var(--c-warning)"></i>遗忘阈值 40%</span>
+            <span><i class="dot" style="background:var(--c-muted)"></i>平均回课间隔</span>
+            <span><i class="dot" style="background:var(--c-success)"></i>留存达标</span>
+            <span><i class="dot" style="background:var(--c-error)"></i>高危遗忘</span>
+          </div>
+        </article>
+
+        <!-- 七维记忆留存（水平条 + count-up + 弹簧填充） -->
+        <article class="card reveal p-7 sm:p-8" data-reveal-delay="0" data-animate="retention">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="text-xl font-semibold">七维记忆留存</h3>
+            <span class="text-xs text-muted">示例数据</span>
+          </div>
+          <p class="mt-2 text-sm text-muted leading-relaxed">仅统计当前等级内容，未教知识点按 0 计入——覆盖度与记忆度一并呈现。</p>
+          <div class="mt-4 retention-list" data-retention></div>
+        </article>
+
+        <!-- 上课周期分析（节律柱 + 试卷小旗） -->
+        <article class="card reveal p-7 sm:p-8" data-reveal-delay="80" data-animate="rhythm">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="text-xl font-semibold">上课周期分析</h3>
+            <span class="text-xs text-muted">示例数据</span>
+          </div>
+          <p class="mt-2 text-sm text-muted leading-relaxed">按月统计上课量与考试节点，上课节奏是否正常一目了然。</p>
+          <div class="mt-4 rhythm-chart" data-rhythm></div>
+          <p class="mt-3 text-xs text-muted flex items-center gap-1.5">
+            <svg class="rhythm-flag" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2 1 L2 11 M2 1.5 L9 3 L2 4.5 Z" style="fill:var(--c-accent)"></path></svg>
+            小旗 = 该周期内有录入的试卷（考试节点）
+          </p>
+        </article>
+      </div>
+
+      <!-- 卖点三列 -->
+      <div class="mt-10 grid sm:grid-cols-3 gap-5">
+        <div class="card card-static reveal p-6" data-reveal-delay="0">
+          <h4 class="font-semibold text-accent">7 维度能力拆解</h4>
+          <p class="mt-2 text-sm text-muted leading-relaxed">节奏、音高、调与音阶、和弦、音程、音乐综合、术语符号，逐项定位强弱。</p>
+        </div>
+        <div class="card card-static reveal p-6" data-reveal-delay="80">
+          <h4 class="font-semibold text-accent">记忆留存实时追踪</h4>
+          <p class="mt-2 text-sm text-muted leading-relaxed">低于阈值的维度自动标红，回课间隔过长及时预警，复习优先级一目了然。</p>
+        </div>
+        <div class="card card-static reveal p-6" data-reveal-delay="160">
+          <h4 class="font-semibold text-accent">上课周期智能建议</h4>
+          <p class="mt-2 text-sm text-muted leading-relaxed">基于遗忘曲线给出上课节奏建议，家长报告一键生成，成果可分享。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        App 截图画廊（横向滑动多机位）
        ============================================================ -->
   <section id="gallery" class="py-16 lg:py-24 bg-surface-soft border-y border-line" data-spy="features">
