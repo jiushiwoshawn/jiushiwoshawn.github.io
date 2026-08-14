@@ -1,0 +1,150 @@
+/* APT 官方文档页样式 */
+:root {
+  --bg: #fafaf8;
+  --card: #ffffff;
+  --ink: #1c2430;
+  --ink-soft: #55606e;
+  --line: #e6e2d8;
+  --brand: #3b6fe0;
+  --brand-soft: #eaf0fc;
+  --accent: #ffd24a;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+/* 顶部横幅 */
+.banner {
+  background: linear-gradient(135deg, #1b2a52 0%, #2c4a9e 55%, #3b6fe0 100%);
+  color: #fff;
+  padding: 40px 24px 32px;
+  margin-bottom: 32px;
+}
+.banner .wrap { padding-bottom: 0; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+.brand .dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+  box-shadow: 0 0 0 4px rgba(255, 210, 74, 0.25);
+}
+.banner h1 {
+  margin-top: 18px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.banner p {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+}
+
+/* 文档卡片 */
+.doc {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+}
+.doc h2 {
+  font-size: 19px;
+  margin: 30px 0 10px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--line);
+}
+.doc h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.doc h3 { font-size: 16px; margin: 18px 0 8px; color: var(--ink); }
+.doc p { margin: 8px 0; color: var(--ink-soft); }
+.doc li { margin: 6px 0 6px 22px; color: var(--ink-soft); }
+.doc strong { color: var(--ink); }
+.doc .meta {
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--brand-soft);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+}
+.doc a { color: var(--brand); text-decoration: none; }
+.doc a:hover { text-decoration: underline; }
+
+/* 导航 */
+.navlinks {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.navlinks a {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid var(--brand);
+  border-radius: 999px;
+  color: var(--brand);
+  font-size: 14px;
+  text-decoration: none;
+  transition: all .15s ease;
+}
+.navlinks a:hover { background: var(--brand); color: #fff; }
+
+footer {
+  margin-top: 36px;
+  text-align: center;
+  color: #98a0ac;
+  font-size: 12.5px;
+}
+
+/* 邀请页 */
+.invite-box {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 36px;
+  text-align: center;
+}
+.invite-box .icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: var(--brand-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: var(--brand);
+  margin-bottom: 16px;
+}
+.invite-box h2 { font-size: 20px; margin-bottom: 10px; }
+.invite-box p { color: var(--ink-soft); font-size: 14.5px; max-width: 420px; margin: 6px auto; }
+
+/* 移动端 */
+@media (max-width: 560px) {
+  .banner { padding: 28px 18px 24px; }
+  .banner h1 { font-size: 22px; }
+  .doc { padding: 22px 20px; }
+}

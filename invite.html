@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>邀请 · APT 英皇乐理教师工作台</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="banner">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>APT · 英皇乐理教师工作台</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="invite-box">
+    <div class="icon">♪</div>
+    <h2>收到一份来自同行的邀请</h2>
+    <p>这位老师正在使用 <strong>APT · 英皇乐理教师工作台</strong>——一个面向 ABRSM 英皇乐理 1–5 级的教学辅助工具：学生管理、排课记录、作业与试卷、学情分析与家长报告，一站搞定。</p>
+    <p id="inviter-note"></p>
+    <p>邀请功能即将上线，请留意应用内的最新版本更新。</p>
+    <div class="navlinks" style="justify-content:center">
+      <a href="index.html">了解更多</a>
+      <a href="privacy.html">隐私政策</a>
+      <a href="terms.html">用户协议</a>
+    </div>
+  </section>
+
+  <footer>© 2026 APT · 英皇乐理教师工作台 · 保留所有权利</footer>
+</main>
+
+<script>
+  // 读取 ?inviter=xxx 参数，友好展示邀请人
+  (function () {
+    var m = location.search.match(/[?&]inviter=([^&]+)/);
+    if (m) {
+      var name = decodeURIComponent(m[1].replace(/\+/g, ' '));
+      document.getElementById('inviter-note').textContent = '邀请人：' + name;
+    }
+  })();
+</script>
+
+</body>
+</html>
