@@ -13,7 +13,7 @@
 
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- 1. 滚动淡入 ---------- */
+  /* ---------- 1. 滚动淡入（支持 data-reveal-delay 自定义错峰延时） ---------- */
   var revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !prefersReduced) {
     var io = new IntersectionObserver(function (entries) {
@@ -26,8 +26,9 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     revealEls.forEach(function (el, i) {
-      // 同屏元素做轻微错峰，避免僵硬齐排
-      el.style.transitionDelay = (i % 4) * 70 + 'ms';
+      // 优先用元素自身的 data-reveal-delay，否则按同屏序号做轻微错峰
+      var custom = el.getAttribute('data-reveal-delay');
+      el.style.transitionDelay = custom ? custom + 'ms' : (i % 4) * 70 + 'ms';
       io.observe(el);
     });
   } else {
@@ -92,5 +93,35 @@
     };
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
+  }
+
+  /* ---------- 6. 回到顶部按钮 ---------- */
+  var toTop = document.querySelector('.scroll-top');
+  if (toTop) {
+    var toggleTop = function () {
+      toTop.classList.toggle('show', window.scrollY > 520);
+    };
+    window.addEventListener('scroll', toggleTop, { passive: true });
+    toggleTop();
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+    });
+  }
+
+  /* ---------- 7. 导航当前区块高亮（scrollspy） ---------- */
+  var spyLinks = document.querySelectorAll('[data-spy-link]');
+  var spyTargets = document.querySelectorAll('[data-spy]');
+  if (spyLinks.length && spyTargets.length && 'IntersectionObserver' in window) {
+    var spyIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.getAttribute('data-spy');
+          spyLinks.forEach(function (l) {
+            l.classList.toggle('is-active', l.getAttribute('data-spy-link') === id);
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    spyTargets.forEach(function (t) { spyIo.observe(t); });
   }
 })();

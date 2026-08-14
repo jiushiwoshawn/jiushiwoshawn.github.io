@@ -73,7 +73,7 @@
 
     <!-- 桌面端中部导航 -->
     <ul class="hidden md:flex items-center gap-8">
-      <li><a href="index.html#features" class="nav-link nav-link-hero">功能介绍</a></li>
+      <li><a href="index.html#features" class="nav-link nav-link-hero" data-spy-link="features">功能介绍</a></li>
       <li><a href="changelog.html" class="nav-link nav-link-hero">更新日志</a></li>
       <li><a href="privacy.html" class="nav-link nav-link-hero">隐私政策</a></li>
     </ul>
@@ -96,7 +96,7 @@
 <div class="nav-drawer-mask fixed inset-0 bg-black/50 z-[55] opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true"></div>
 <div class="nav-drawer fixed top-0 right-0 h-full w-[280px] z-[56] bg-surface shadow-2xl translate-x-full transition-transform duration-300 md:hidden p-6 pt-20">
   <ul class="flex flex-col gap-6">
-    <li><a href="index.html#features" class="text-lg font-medium text-ink">功能介绍</a></li>
+    <li><a href="index.html#features" class="text-lg font-medium text-ink" data-spy-link="features">功能介绍</a></li>
     <li><a href="changelog.html" class="text-lg font-medium text-ink">更新日志</a></li>
     <li><a href="privacy.html" class="text-lg font-medium text-ink">隐私政策</a></li>
   </ul>
@@ -118,15 +118,15 @@
 
       <!-- ---- 文案区 ---- -->
       <div class="text-center lg:text-left">
-        <h1 class="text-6xl sm:text-7xl font-bold tracking-tight">APT</h1>
-        <p class="mt-5 text-2xl sm:text-3xl font-semibold tracking-[2px]">深耕乐理，展露所长</p>
-        <p class="mt-3 text-[11px] sm:text-xs tracking-[1.5px] uppercase text-[#A39C8E]">Delve into music theory, embrace your APT</p>
-        <p class="mt-7 text-base sm:text-lg leading-relaxed text-[#A39C8E] max-w-[46ch] mx-auto lg:mx-0">
+        <h1 class="hero-rise d1 text-6xl sm:text-7xl font-bold tracking-tight">APT</h1>
+        <p class="hero-rise d2 mt-5 text-2xl sm:text-3xl font-semibold tracking-[2px]">深耕乐理，展露所长</p>
+        <p class="hero-rise d3 mt-3 text-[11px] sm:text-xs tracking-[1.5px] uppercase text-[#A39C8E]">Delve into music theory, embrace your APT</p>
+        <p class="hero-rise d4 mt-7 text-base sm:text-lg leading-relaxed text-[#A39C8E] max-w-[46ch] mx-auto lg:mx-0">
           英皇乐理考试学生管理系统——专注教学、专项管理、专业分析。
           同一套 App，同时服务学员、乐理老师与音乐培训机构。
         </p>
 
-        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+        <div class="hero-rise d5 mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
           <!-- TODO: 替换 #appstore 为 App Store 真实链接 -->
           <a href="#appstore" class="btn btn-hero-primary h-12 px-8 text-base" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-5 h-5" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
@@ -144,7 +144,7 @@
            1. front-phone → assets/screens/main.png（首页深色）
            2. back-phone  → assets/screens/feature.png（能力分析）
            如需更新：直接替换上述文件，保持外层 .phone-screen 不变 -->
-      <div class="relative flex items-end justify-center lg:justify-end min-h-[540px] lg:pr-2" aria-label="App 界面预览">
+      <div class="hero-rise d6 relative flex items-end justify-center lg:justify-end min-h-[540px] lg:pr-2" aria-label="App 界面预览">
 
         <!-- 后方偏移缩小手机：参与 flex 流，靠左 + 上抬 + 缩小 → 与前台产生左右重叠 -->
         <div class="back-phone phone w-[210px] h-[436px] opacity-60 scale-[0.92] origin-bottom-right -mr-14 mb-12 z-0">
@@ -168,7 +168,7 @@
   <!-- ============================================================
        核心功能（双视角：App 一套界面，区分使用人群）
        ============================================================ -->
-  <section id="features" class="py-24 lg:py-32">
+  <section id="features" class="py-24 lg:py-32" data-spy="features">
     <div class="max-w-site mx-auto px-5 sm:px-8">
       <div class="reveal max-w-2xl">
         <p class="text-sm font-semibold tracking-widest text-accent">核心功能</p>
@@ -179,7 +179,7 @@
       <div class="mt-14 grid md:grid-cols-2 gap-6">
 
         <!-- 学员视角 -->
-        <article class="card reveal p-8">
+        <article class="card reveal from-left p-8" data-reveal-delay="80">
           <div class="flex items-center gap-3">
             <!-- 学员视角图标（内联 SVG，禁用 emoji） -->
             <span class="w-11 h-11 rounded-xl bg-accent-soft text-accent flex items-center justify-center" aria-hidden="true">
@@ -223,7 +223,7 @@
         </article>
 
         <!-- 老师 / 机构视角 -->
-        <article class="card reveal p-8">
+        <article class="card reveal from-right p-8" data-reveal-delay="160">
           <div class="flex items-center gap-3">
             <!-- 老师/机构视角图标（内联 SVG，禁用 emoji） -->
             <span class="w-11 h-11 rounded-xl bg-accent-soft text-accent flex items-center justify-center" aria-hidden="true">
@@ -272,12 +272,13 @@
   <!-- ============================================================
        App 截图画廊（横向滑动多机位）
        ============================================================ -->
-  <section id="gallery" class="py-16 lg:py-24 bg-surface-soft border-y border-line">
+  <section id="gallery" class="py-16 lg:py-24 bg-surface-soft border-y border-line" data-spy="features">
     <div class="max-w-site mx-auto px-5 sm:px-8">
       <div class="reveal flex flex-wrap items-end justify-between gap-4">
         <div>
           <p class="text-sm font-semibold tracking-widest text-accent">界面预览</p>
           <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">贴近真实教学的产品</h2>
+          <p class="mt-3 text-muted max-w-[52ch]">从首页概览到学情分析，每一屏都为英皇乐理教学场景而设计。</p>
         </div>
         <p class="text-sm text-muted">左右滑动查看更多</p>
       </div>
@@ -286,7 +287,7 @@
       <!-- 已替换为真实 App 截图，文件位于 assets/screens/；如需更新直接替换同名文件 -->
       <div class="gallery-track mt-10">
         <!-- 卡片 1 -->
-        <figure class="reveal w-[212px]">
+        <figure class="reveal w-[212px]" data-reveal-delay="0">
           <div class="phone w-[212px] h-[430px]">
             <div class="phone-screen">
               <img src="assets/screens/gallery-1.png" alt="APT 首页 · 今日待办" class="w-full h-full object-cover">
@@ -296,7 +297,7 @@
         </figure>
 
         <!-- 卡片 2 -->
-        <figure class="reveal w-[212px]">
+        <figure class="reveal w-[212px]" data-reveal-delay="90">
           <div class="phone w-[212px] h-[430px]">
             <div class="phone-screen">
               <img src="assets/screens/gallery-2.png" alt="APT 学生列表" class="w-full h-full object-cover">
@@ -306,7 +307,7 @@
         </figure>
 
         <!-- 卡片 3 -->
-        <figure class="reveal w-[212px]">
+        <figure class="reveal w-[212px]" data-reveal-delay="180">
           <div class="phone w-[212px] h-[430px]">
             <div class="phone-screen">
               <img src="assets/screens/gallery-3.png" alt="APT 学员档案" class="w-full h-full object-cover">
@@ -316,7 +317,7 @@
         </figure>
 
         <!-- 卡片 4 -->
-        <figure class="reveal w-[212px]">
+        <figure class="reveal w-[212px]" data-reveal-delay="270">
           <div class="phone w-[212px] h-[430px]">
             <div class="phone-screen">
               <img src="assets/screens/gallery-4.png" alt="APT 试卷一览" class="w-full h-full object-cover">
@@ -331,7 +332,7 @@
   <!-- ============================================================
        快速上手（轻量说明入口）
        ============================================================ -->
-  <section id="start" class="py-24 lg:py-32">
+  <section id="start" class="py-24 lg:py-32" data-spy="features">
     <div class="max-w-site mx-auto px-5 sm:px-8">
       <div class="reveal max-w-2xl">
         <p class="text-sm font-semibold tracking-widest text-accent">快速上手</p>
@@ -340,22 +341,22 @@
       </div>
 
       <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="card card-static reveal p-6">
+        <div class="card card-static reveal p-6" data-reveal-delay="0">
           <span class="text-sm font-bold text-accent">01</span>
           <h3 class="mt-3 font-semibold">下载 APT</h3>
           <p class="mt-2 text-sm text-muted leading-relaxed">在 App Store 搜索「APT」或点击本页下载按钮。</p>
         </div>
-        <div class="card card-static reveal p-6">
+        <div class="card card-static reveal p-6" data-reveal-delay="80">
           <span class="text-sm font-bold text-accent">02</span>
           <h3 class="mt-3 font-semibold">创建学员档案</h3>
           <p class="mt-2 text-sm text-muted leading-relaxed">录入姓名、年级与当前备考等级，建立专属档案。</p>
         </div>
-        <div class="card card-static reveal p-6">
+        <div class="card card-static reveal p-6" data-reveal-delay="160">
           <span class="text-sm font-bold text-accent">03</span>
           <h3 class="mt-3 font-semibold">记录课时与作业</h3>
           <p class="mt-2 text-sm text-muted leading-relaxed">课后随手记课时内容，布置作业、跟踪完成情况。</p>
         </div>
-        <div class="card card-static reveal p-6">
+        <div class="card card-static reveal p-6" data-reveal-delay="240">
           <span class="text-sm font-bold text-accent">04</span>
           <h3 class="mt-3 font-semibold">查看学情报告</h3>
           <p class="mt-2 text-sm text-muted leading-relaxed">能力分析与家长报告自动生成，成果一键分享。</p>
@@ -374,11 +375,12 @@
   <!-- ============================================================
        FAQ（手风琴）
        ============================================================ -->
-  <section id="faq" class="py-16 lg:py-24 bg-surface-soft border-y border-line">
+  <section id="faq" class="py-16 lg:py-24 bg-surface-soft border-y border-line" data-spy="features">
     <div class="max-w-site mx-auto px-5 sm:px-8">
       <div class="reveal max-w-2xl">
         <p class="text-sm font-semibold tracking-widest text-accent">常见问题</p>
         <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">你可能想知道</h2>
+        <p class="mt-4 text-muted leading-relaxed">关于设备、数据与隐私，我们梳理了最常被问到的问题。</p>
       </div>
 
       <div class="mt-12 max-w-3xl space-y-3">
@@ -479,6 +481,11 @@
     </div>
   </div>
 </footer>
+
+<!-- 回到顶部按钮 -->
+<button class="scroll-top" aria-label="回到顶部" type="button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
 
 <script src="js/main.js"></script>
 </body>
