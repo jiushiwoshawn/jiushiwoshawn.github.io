@@ -1,0 +1,7 @@
+# APT 官网 robots.txt
+# 允许所有搜索引擎抓取全站
+User-agent: *
+Allow: /
+
+# sitemap 位置（部署后取消注释并替换为真实域名）
+# Sitemap: https://jiushiwoshawn.github.io/sitemap.xml

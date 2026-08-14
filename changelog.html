@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============ SEO ============ -->
+  <title>更新日志 · APT — 英皇乐理考试学生管理系统</title>
+  <meta name="description" content="APT 版本更新记录：了解最新功能、改进与修复。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jiushiwoshawn.github.io/changelog.html">
+
+  <!-- ============ Open Graph ============ -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="APT">
+  <meta property="og:title" content="更新日志 · APT">
+  <meta property="og:description" content="APT 版本更新记录。">
+  <meta property="og:url" content="https://jiushiwoshawn.github.io/changelog.html">
+  <meta property="og:image" content="https://jiushiwoshawn.github.io/assets/og-cover.png">
+  <meta property="og:locale" content="zh_CN">
+
+  <meta name="theme-color" content="#13110D">
+
+  <!-- ============ 样式与图标 ============ -->
+  <link rel="stylesheet" href="css/tailwind.css">
+  <!-- TODO: 替换为真实 favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+
+<body class="antialiased">
+
+<!-- 顶部滚动进度条 -->
+<div class="scroll-progress fixed top-0 left-0 h-[2px] w-0 z-[60] bg-accent" aria-hidden="true"></div>
+
+<!-- ============ 全局导航（子页面默认直接进入滚动态主题色） ============ -->
+<header class="site-nav fixed top-0 left-0 right-0 z-50 is-scrolled">
+  <nav class="max-w-site mx-auto flex items-center justify-between px-5 sm:px-8 h-16" aria-label="主导航">
+    <a href="index.html" class="flex items-center gap-2.5 font-bold text-lg tracking-wide nav-text">
+      <span class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-[13px] font-bold text-page">A</span>
+      APT
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8">
+      <li><a href="index.html#features" class="nav-link nav-link-hero">功能介绍</a></li>
+      <li><a href="changelog.html" class="nav-link nav-link-hero" aria-current="page">更新日志</a></li>
+      <li><a href="privacy.html" class="nav-link nav-link-hero">隐私政策</a></li>
+    </ul>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- TODO: 替换 #appstore 为 App Store 真实链接 -->
+      <a href="#appstore" class="btn btn-hero-primary h-9 px-3 sm:px-4 text-sm gap-1.5" rel="noopener" aria-label="App Store 下载">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4 h-4" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+        <span class="hidden sm:inline">App Store 下载</span>
+      </a>
+      <button class="nav-burger md:hidden p-2 nav-text" aria-label="打开菜单" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-6 h-6" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- 移动端抽屉 -->
+<div class="nav-drawer-mask fixed inset-0 bg-black/50 z-[55] opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true"></div>
+<div class="nav-drawer fixed top-0 right-0 h-full w-[280px] z-[56] bg-surface shadow-2xl translate-x-full transition-transform duration-300 md:hidden p-6 pt-20">
+  <ul class="flex flex-col gap-6">
+    <li><a href="index.html#features" class="text-lg font-medium text-ink">功能介绍</a></li>
+    <li><a href="changelog.html" class="text-lg font-medium text-ink">更新日志</a></li>
+    <li><a href="privacy.html" class="text-lg font-medium text-ink">隐私政策</a></li>
+  </ul>
+  <!-- TODO: 替换 #appstore 为 App Store 真实链接 -->
+  <a href="#appstore" class="btn btn-primary w-full h-11 mt-8" rel="noopener">App Store 下载</a>
+</div>
+
+<main class="pt-28 pb-24">
+  <div class="max-w-site mx-auto px-5 sm:px-8">
+
+    <!-- 页头 -->
+    <header class="reveal max-w-2xl">
+      <p class="text-sm font-semibold tracking-widest text-accent">更新日志</p>
+      <h1 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">APT 版本记录</h1>
+      <p class="mt-4 text-muted leading-relaxed">持续打磨，让每一次备考更高效。以下为版本更新记录，最新版本优先。</p>
+    </header>
+
+    <!-- ============================================================
+         版本记录列表
+         ------------------------------------------------------------
+         【如何更新本页面】
+         每次发布新版本后，在列表最上方（v2.6.6 之前）插入一个新的
+         <article> 版本块，复制下方模板并替换内容即可：
+
+         <article class="card reveal p-8">
+           <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+             <h2 class="text-xl font-bold">v2.6.7</h2>
+             <time class="text-sm text-muted">2026-08-20</time>
+           </div>
+           <ul class="mt-5 space-y-3 text-sm text-muted leading-relaxed">
+             <li>· 新增：……</li>
+             <li>· 改进：……</li>
+             <li>· 修复：……</li>
+           </ul>
+         </article>
+         ============================================================ -->
+
+    <div class="mt-12 space-y-6">
+
+      <!-- v2.6.6 -->
+      <article class="card reveal p-8">
+        <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+          <h2 class="text-xl font-bold">v2.6.6</h2>
+          <time class="text-sm text-muted">2026-08-05</time>
+        </div>
+        <ul class="mt-5 space-y-3 text-sm text-muted leading-relaxed">
+          <li>· 判卷考点体系重构：全部考点统一加 EX- 前缀命名，与关键词库彻底解耦，并新增考点到知识库标签的完整映射表，AI 判卷更准确。</li>
+          <li>· 可报考环按当前等级聚合展示，学习进度一目了然。</li>
+          <li>· 学生端考点展示改为先给名称、再括注编号，更易读。</li>
+          <li>· 移除不考考点（如声乐节奏适配、中古调式等），AI 判卷不再输出无效考点。</li>
+        </ul>
+      </article>
+
+      <!-- v2.6.5 -->
+      <article class="card reveal p-8">
+        <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+          <h2 class="text-xl font-bold">v2.6.5</h2>
+          <time class="text-sm text-muted">2026-08-01</time>
+        </div>
+        <ul class="mt-5 space-y-3 text-sm text-muted leading-relaxed">
+          <li>· 体验优化与细节修复。</li>
+        </ul>
+      </article>
+
+      <!-- v2.6.4 -->
+      <article class="card reveal p-8">
+        <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+          <h2 class="text-xl font-bold">v2.6.4</h2>
+          <time class="text-sm text-muted">2026-07-29</time>
+        </div>
+        <ul class="mt-5 space-y-3 text-sm text-muted leading-relaxed">
+          <li>· 作业模块重构：作业录入统一并入「作业一览」，一处完成录入与查看，操作路径更短。</li>
+          <li>· 新增课程流程简化：仅保留时间、内容、回课三个核心记录项，录入更快。</li>
+          <li>· 学生详情页按钮精简为五项，层级更清晰。</li>
+        </ul>
+      </article>
+
+      <!-- 早期版本占位（如需补充更早历史，复制上方模板在此追加） -->
+      <!-- <article class="card reveal p-8">…更早版本…</article> -->
+
+    </div>
+
+    <!-- 反馈入口 -->
+    <div class="reveal mt-14 text-center">
+      <p class="text-muted">有建议或遇到问题？</p>
+      <a href="mailto:APT_OFFICIAL@163.com" class="mt-2 inline-block text-sm font-semibold text-accent hover:underline">APT_OFFICIAL@163.com</a>
+    </div>
+
+  </div>
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="border-t border-line py-10">
+  <div class="max-w-site mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-5">
+    <div class="flex items-center gap-2.5 font-bold text-lg">
+      <span class="w-7 h-7 rounded-lg bg-accent flex items-center justify-center text-[11px] font-bold text-page">A</span>
+      APT
+    </div>
+    <ul class="flex items-center gap-6 text-sm">
+      <li><a href="changelog.html" class="nav-link">更新日志</a></li>
+      <li><a href="privacy.html" class="nav-link">隐私政策</a></li>
+    </ul>
+    <div class="text-center sm:text-right">
+      <p class="text-sm text-muted">© <span data-year>2026</span> APT 独立开发者</p>
+      <a href="mailto:APT_OFFICIAL@163.com" class="text-sm text-muted hover:text-accent transition-colors">APT_OFFICIAL@163.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
