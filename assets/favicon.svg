@@ -1,6 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- APT 官网 favicon：品牌蓝圆角方块 + 白色音符（禁 emoji，纯矢量） -->
-  <rect width="64" height="64" rx="14" fill="#6E92BE"/>
-  <text x="32" y="44" font-family="-apple-system, 'PingFang SC', 'Helvetica Neue', Arial, sans-serif"
-        font-size="34" font-weight="700" text-anchor="middle" fill="#13110D">A</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <style>
+    .bg-dark, .fg-light { display: none; }
+    @media (prefers-color-scheme: dark) {
+      .bg-light, .fg-dark { display: none; }
+      .bg-dark, .fg-light { display: block; }
+    }
+  </style>
+  <!-- 浅色模式：奶油底 + 黑字 -->
+  <rect class="bg-light" width="1024" height="1024" rx="230" fill="#F9ECD8"/>
+  <text class="fg-dark" x="512" y="700" text-anchor="middle" font-family="Arial Black, Arial, Helvetica Neue, Helvetica, sans-serif" font-size="520" font-weight="900" fill="#000000">APT</text>
+  <!-- 深色模式：近黑底 + 粉字 -->
+  <rect class="bg-dark" width="1024" height="1024" rx="230" fill="#060500"/>
+  <text class="fg-light" x="512" y="700" text-anchor="middle" font-family="Arial Black, Arial, Helvetica Neue, Helvetica, sans-serif" font-size="520" font-weight="900" fill="#F0B6C5">APT</text>
 </svg>
