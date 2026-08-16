@@ -4,4 +4,4 @@ User-agent: *
 Allow: /
 
 # sitemap 位置（部署后取消注释并替换为真实域名）
-# Sitemap: https://apt-maestro.github.io/sitemap.xml
+# Sitemap: https://jiushiwoshawn.github.io/sitemap.xml
