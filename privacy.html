@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ============ SEO ============ -->
-  <title>隐私政策 · APT — 英皇乐理考试学生管理系统</title>
-  <meta name="description" content="APT 隐私政策：我们如何收集、使用、存储与保护你的个人信息。更新日期 2026-08-14。">
+  <title>隐私政策 · APT Maestro — 英皇乐理G1-5教师工作台</title>
+  <meta name="description" content="APT Maestro 隐私政策：我们如何收集、使用、存储与保护你的个人信息。更新日期 2026-08-15。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jiushiwoshawn.github.io/privacy.html">
 
   <!-- ============ Open Graph ============ -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="APT">
-  <meta property="og:title" content="隐私政策 · APT">
-  <meta property="og:description" content="APT 隐私政策：如何收集、使用、存储与保护你的个人信息。">
+  <meta property="og:title" content="隐私政策 · APT Maestro">
+  <meta property="og:description" content="APT Maestro 隐私政策：如何收集、使用、存储与保护你的个人信息。">
   <meta property="og:url" content="https://jiushiwoshawn.github.io/privacy.html">
   <meta property="og:image" content="https://jiushiwoshawn.github.io/assets/og-cover.png">
   <meta property="og:locale" content="zh_CN">
@@ -80,7 +80,7 @@
     <header class="reveal max-w-3xl">
       <p class="text-sm font-semibold tracking-widest text-accent">隐私政策</p>
       <h1 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">隐私政策</h1>
-      <p class="mt-4 text-sm text-muted">更新日期：2026 年 8 月 14 日　|　生效日期：2026 年 8 月 14 日</p>
+      <p class="mt-4 text-sm text-muted">更新日期：2026 年 8 月 15 日　|　生效日期：2026 年 8 月 15 日</p>
     </header>
 
     <!-- ============================================================
@@ -126,6 +126,7 @@
           <li><strong class="text-ink">云数据库服务（Supabase）</strong>：存储您的账号信息与教学数据，采用访问鉴权与数据隔离策略，每个账号仅能访问本人录入的数据；</li>
           <li><strong class="text-ink">人工智能服务（DeepSeek）</strong>：接收您提交的分析请求（如试卷作答、作业内容），用于生成学情分析与报告，我们要求其对您的数据保密；</li>
           <li><strong class="text-ink">Apple Inc.</strong>：提供「通过 Apple 登录」以及应用内购买服务，相关处理遵循 Apple 的隐私政策。</li>
+          <li><strong class="text-ink">您自行指定的 AI 服务商</strong>：若您在「设置 → AI 设置」中绑定个人 AI API，相关请求将<strong class="text-ink">直接从您的设备</strong>发往您指定的服务商端点。我们<strong class="text-ink">不会</strong>在我们的服务器上存储您的 API Key。</li>
         </ul>
         <p class="mt-3">除上述情形及法律法规另有规定外，我们不会向第三方披露您的个人信息。</p>
       </section>
@@ -144,8 +145,9 @@
         <h2 class="text-xl font-semibold text-ink mb-4">六、信息的存储与安全</h2>
         <ul class="space-y-2.5 list-disc pl-5">
           <li>数据传输全程使用 HTTPS 加密；</li>
-          <li>数据按账号隔离存储，并通过访问令牌鉴权，防止越权访问；</li>
-          <li>保留期限：我们仅在提供服务所必需的期限内保留您的数据。您注销账号或要求删除后，我们将在合理期限内删除相关数据；</li>
+          <li>数据按账号隔离存储在 Supabase 中，通过行级安全策略（RLS）与访问令牌鉴权，防止越权访问；</li>
+          <li>您绑定的个人 AI API Key 仅保存在 iOS Keychain，不上传到我们的服务器，并设置设备级访问级别；</li>
+          <li>保留期限：我们仅在提供服务所必需的期限内保留您的数据。您删除账号或要求删除后，我们将在合理期限内删除相关数据；</li>
           <li>尽管我们采取上述措施，互联网环境不存在绝对安全，请您妥善保管账号凭证。</li>
         </ul>
       </section>
@@ -155,8 +157,9 @@
         <p>您可以随时行使以下权利：</p>
         <ul class="mt-3 space-y-2.5 list-disc pl-5">
           <li><strong class="text-ink">查询与更正</strong>：在应用内查看并修改您录入的信息；</li>
-          <li><strong class="text-ink">删除</strong>：删除您录入的课程、作业、试卷等数据；</li>
-          <li><strong class="text-ink">注销账号</strong>：在应用「设置」中申请注销，注销后我们将删除您的账号及相关数据；</li>
+          <li><strong class="text-ink">删除数据</strong>：删除您录入的课程、作业、试卷等数据；</li>
+          <li><strong class="text-ink">导出数据</strong>：通过「设置 → 数据 → 导出数据」导出您的教学数据 JSON 备份；</li>
+          <li><strong class="text-ink">删除账号</strong>：在应用「设置 → 关于 → 删除账号」中申请注销。我们会在合理期限内（一般不超过 15 个工作日）删除您的 Supabase 认证账号及关联的教学数据，完成删除后无法恢复；</li>
           <li><strong class="text-ink">撤回同意</strong>：您可以随时停止使用本应用，并联系我们删除数据。</li>
         </ul>
         <p class="mt-3">如您对个人信息处理有任何疑问或诉求，请通过文末联系方式与我们联系，我们将在 15 个工作日内答复。</p>
